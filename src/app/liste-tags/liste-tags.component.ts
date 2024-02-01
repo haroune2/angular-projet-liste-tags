@@ -17,11 +17,15 @@ export class ListeTagsComponent {
   ngOnInit(): void {
     // Récupère l'ID du projet à partir de l'URL
     this.route.paramMap.subscribe(params => {
+      console.log(params.get('id')  +" params.get('id') ");
+      
       const projectId: string = params.get('id') || '';
 
       // Appel du service pour obtenir les tags du projet spécifique
-      this.projetService.getTagsById(projectId).subscribe(tags => {
-        this.tags = tags;
+      this.projetService.getTagsById(projectId).subscribe((data) => {
+        console.log(data);
+        
+        this.tags = data;
       });
     });
   }

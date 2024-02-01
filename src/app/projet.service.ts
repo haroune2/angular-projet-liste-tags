@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -6,27 +7,25 @@ import { Observable, of } from 'rxjs';
 })
 export class ProjetService {
 
-  constructor() { }
+ 
 
-  private projets = [
-    { id: 1, nom: 'Projet 1', tags: ['tag1', 'tag2'] },
-    { id: 2, nom: 'Projet 2', tags: ['tag3', 'tag4'] },
+  private apiUrlProjets = 'http://localhost:4200'; // Chemin vers le fichier JSON
+  private apiUrlProjetsTags = 'http://localhost:4200/tags'; // Chemin vers le fichier JSON
 
-  ];
+  //private apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+
+
+  constructor(private http: HttpClient) {}
 
   getProjets(): Observable<any[]> {
-    return of(this.projets);
+    return this.http.get<any[]>(this.apiUrlProjets);
+  }
+
+  getTagsById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrlProjetsTags}/${id}`);
   }
 
 
-  getTagsById(id: string): Observable<string[]> {
-    for (const projet of this.projets) {
-      if (projet.id.toString() === id) {
-        return of(projet.tags);
-      }
-    }
-    return of([]); // Retourne un tableau vide si aucun projet  n'est trouvé
-  }
 
   
 }

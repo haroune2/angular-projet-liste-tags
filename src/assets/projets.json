@@ -1,0 +1,7 @@
+ 
+[
+    { "id": 1, "nom": "Projet 1", "tags": ["tag1", "tag2"] },
+    { "id": 2, "nom": "Projet 2", "tags": ["tag3", "tag4"] }
+ 
+]
+  
