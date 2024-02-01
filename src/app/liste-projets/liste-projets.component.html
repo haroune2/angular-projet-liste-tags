@@ -1,0 +1,11 @@
+<!-- liste-projets.component.html -->
+
+<div>
+    <h2>Liste des Projets</h2>
+    <ul>
+      <li *ngFor="let projet of projets">
+        <a [routerLink]="['/tags', projet.id]">{{ projet.nom }}</a>
+      </li>
+    </ul>
+  </div>
+  
