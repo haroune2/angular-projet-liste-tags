@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProjetService } from '../projet.service';
 
 @Component({
@@ -7,13 +7,11 @@ import { ProjetService } from '../projet.service';
   styleUrl: './liste-projets.component.css'
 })
 export class ListeProjetsComponent {
-  projets: any[] = [];
+   @Input() projects: any[] = [];
 
   constructor(private projetService: ProjetService) { }
 
   ngOnInit(): void {
-     this.projetService.getProjets().subscribe(projets => {
-      this.projets = projets;
-    });
+
   }
 }

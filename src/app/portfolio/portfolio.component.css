@@ -1,0 +1,23 @@
+/* portfolio.component.css */
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  button:hover {
+    background-color: #297fb8;
+  }
+  
+
+  app-liste-projets p {
+    color: #777;
+    font-style: italic;
+  }
+  

@@ -1,0 +1,32 @@
+/* app-liste-projets.component.css */
+
+.container {
+    display: flex;
+    flex-direction: column; /* Pour empiler les éléments verticalement */
+    align-items: flex-start; /* Aligner à gauche */
+    margin-top: 20px; /* Ajouter une marge en haut */
+  }
+  
+  .projects {
+    text-align: left; /* Aligner le texte à gauche */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  p {
+    color: #555;
+  }
+  
+  /* Style pour le message lorsque la liste de projets est vide */
+  div.no-projects {
+    margin-top: 20px;
+    color: #777;
+    font-style: italic;
+  }
+  

@@ -1,11 +1,9 @@
-<!-- liste-projets.component.html -->
-
-<div>
-    <h2>Liste des Projets</h2>
-    <ul>
-      <li *ngFor="let projet of projets">
-        <a [routerLink]="['/tags', projet.id]">{{ projet.nom }}</a>
-      </li>
-    </ul>
+<div class="container" *ngIf="projects && projects.length > 0">
+  <div class="projects" *ngFor="let project of projects">
+    <h2>{{ project.nom }}</h2>
+    <p>Tags: {{ project.tags.join(', ') }}</p>
   </div>
-  
+</div>
+<div *ngIf="!projects || projects.length === 0">
+  <p>Aucun projet disponible.</p>
+</div>

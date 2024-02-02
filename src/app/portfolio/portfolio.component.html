@@ -1,0 +1,8 @@
+<!-- portfolio.component.html -->
+
+<button (click)="onPortfolioClick()">Voir les projets</button>
+<div *ngIf="projects && projects.length > 0">
+    <app-liste-projets [projects]="projects"></app-liste-projets>
+
+</div>
+
